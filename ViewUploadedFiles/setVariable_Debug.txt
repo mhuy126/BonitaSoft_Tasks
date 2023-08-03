@@ -1,0 +1,51 @@
+################### View File(s) Form ###################
+
+
+Variable:
+
+context:  	../API/bpm/userTask/{{taskId}}/context 	(External API)
+task 		../API/bpm/userTask/{{taskId}} 			(External API )	
+taskId 		id 										(URL parameter) 
+
+
+-----------------------------------------------------------
+Debug text area:
+
+<strong>Debug:</strong> <br>
+context: {{context}} <br>
+task: {{task}} <br>
+taskId: {{taskId}}
+
+
+------------------------------------------------------------
+Result
+
+1/ Upload 2 files: Library (slot1), Neighbor (slot2)
+Debug:
+context: {"listUploadedFiles_ref":[{"id":105,"processInstanceId":1006,"name":"listUploadedFiles","author":4,"creationDate":1691074165151,"fileName":"Library.pdf","contentMimeType":"application/pdf","contentStorageId":"105","url":"documentDownload?fileName=Library.pdf&contentStorageId=105","description":null,"version":"1","index":0,"contentFileName":"Library.pdf"},{"id":106,"processInstanceId":1006,"name":"listUploadedFiles","author":4,"creationDate":1691074165151,"fileName":"Neighbor.pdf","contentMimeType":"application/pdf","contentStorageId":"106","url":"documentDownload?fileName=Neighbor.pdf&contentStorageId=106","description":null,"version":"1","index":1,"contentFileName":"Neighbor.pdf"}]}
+
+task: {"displayDescription":"","executedBy":"0","rootContainerId":"1006","assigned_date":"","displayName":"View File(s)","executedBySubstitute":"0","dueDate":"","description":"","type":"USER_TASK","priority":"normal","actorId":"106","processId":"4780216177554702762","caseId":"1006","name":"View File(s)","reached_state_date":"2023-08-03 21:49:25.195","rootCaseId":"1006","id":"20019","state":"ready","parentCaseId":"1006","last_update_date":"2023-08-03 21:49:25.195","assigned_id":""}
+
+taskId: 20019
+
+___________________________________________________________________________________________
+Variable: Not change
+
+----------------------------------------------------------------------
+Debug text area:
+
+<strong>Debug:</strong> <br>
+context: {{context | json}} <br>
+context.listUploadedFiles_ref: {{context.listUploadedFiles_ref}} <br>
+context.listUploadedFiles_ref.fileName: {{context.listUploadedFiles_ref.fileName}}
+
+
+----------------------------------------------------------------------
+Result
+
+Debug: 
+context: { "listUploadedFiles_ref": [ { "id": 109, "processInstanceId": 1008, "name": "listUploadedFiles", "author": 4, "creationDate": 1691075182107, "fileName": "Library.pdf", "contentMimeType": "application/pdf", "contentStorageId": "109", "url": "documentDownload?fileName=Library.pdf&contentStorageId=109", "description": null, "version": "1", "index": 0, "contentFileName": "Library.pdf" }, { "id": 110, "processInstanceId": 1008, "name": "listUploadedFiles", "author": 4, "creationDate": 1691075182107, "fileName": "Neighbor.pdf", "contentMimeType": "application/pdf", "contentStorageId": "110", "url": "documentDownload?fileName=Neighbor.pdf&contentStorageId=110", "description": null, "version": "1", "index": 1, "contentFileName": "Neighbor.pdf" } ] }
+
+context.listUploadedFiles_ref: [{"id":109,"processInstanceId":1008,"name":"listUploadedFiles","author":4,"creationDate":1691075182107,"fileName":"Library.pdf","contentMimeType":"application/pdf","contentStorageId":"109","url":"documentDownload?fileName=Library.pdf&contentStorageId=109","description":null,"version":"1","index":0,"contentFileName":"Library.pdf"},{"id":110,"processInstanceId":1008,"name":"listUploadedFiles","author":4,"creationDate":1691075182107,"fileName":"Neighbor.pdf","contentMimeType":"application/pdf","contentStorageId":"110","url":"documentDownload?fileName=Neighbor.pdf&contentStorageId=110","description":null,"version":"1","index":1,"contentFileName":"Neighbor.pdf"}]
+
+context.listUploadedFiles_ref.fileName: 
